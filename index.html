@@ -1,0 +1,1135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Bite – Health For Wealth</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green-dark: #1a3a2a;
+        --green-mid: #2d5a3d;
+        --green-accent: #4a8c5c;
+        --green-light: #7bbf8a;
+        --cream: #f8f4ec;
+        --warm-white: #fdfaf5;
+        --gold: #c9a84c;
+        --gold-light: #e8c97a;
+        --text-dark: #1a2e22;
+        --text-mid: #3d5c46;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Outfit", sans-serif;
+        background: var(--warm-white);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100svh;
+        background: var(--green-dark);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        padding: 2rem;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 20% 80%,
+            rgba(74, 140, 92, 0.25) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 60% 50% at 80% 20%,
+            rgba(201, 168, 76, 0.15) 0%,
+            transparent 55%
+          );
+        pointer-events: none;
+      }
+      .hero-leaf {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.07;
+        animation: float 8s ease-in-out infinite;
+      }
+      .hero-leaf:nth-child(1) {
+        width: 320px;
+        height: 320px;
+        background: var(--green-accent);
+        top: -80px;
+        right: -80px;
+        animation-delay: 0s;
+      }
+      .hero-leaf:nth-child(2) {
+        width: 200px;
+        height: 200px;
+        background: var(--gold);
+        bottom: 60px;
+        left: -60px;
+        animation-delay: 2s;
+      }
+      .hero-leaf:nth-child(3) {
+        width: 150px;
+        height: 150px;
+        background: var(--green-light);
+        top: 40%;
+        right: 5%;
+        animation-delay: 4s;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-20px) scale(1.04);
+        }
+      }
+
+      .logo-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        animation: fadeUp 0.9s ease both;
+      }
+      .logo-badge {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Syne", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: var(--green-dark);
+        line-height: 1.1;
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4);
+        letter-spacing: -0.5px;
+      }
+      .hero h1 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(2.8rem, 9vw, 5.5rem);
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -1px;
+        line-height: 1;
+        text-align: center;
+        animation: fadeUp 0.9s 0.15s ease both;
+      }
+      .hero h1 span {
+        color: var(--gold-light);
+      }
+      .hero-tagline {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--green-light);
+        margin-top: 0.5rem;
+        animation: fadeUp 0.9s 0.3s ease both;
+      }
+      .hero-contact {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: fadeUp 0.9s 0.45s ease both;
+      }
+      .hero-contact a {
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: color 0.2s;
+      }
+      .hero-contact a:hover {
+        color: var(--gold-light);
+      }
+      .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        animation: fadeUp 0.9s 0.7s ease both;
+      }
+      .scroll-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        animation: bounce 1.6s ease-in-out infinite;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(8px);
+          opacity: 1;
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── SECTION TITLE ── */
+      .section-title {
+        text-align: center;
+        padding: 4rem 1.5rem 2.5rem;
+      }
+      .section-title h2 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(2rem, 6vw, 3.2rem);
+        font-weight: 900;
+        color: var(--green-dark);
+        line-height: 1.1;
+      }
+      .section-title p {
+        margin-top: 0.6rem;
+        color: var(--green-accent);
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .title-line {
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        border-radius: 2px;
+        margin: 0.8rem auto 0;
+      }
+
+      /* ── MENU GRID ── */
+      .menu-section {
+        background: var(--cream);
+        padding: 0 1rem 5rem;
+      }
+      .menu-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      /* ── CARD ── */
+      .card {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(26, 58, 42, 0.08);
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease,
+          box-shadow 0.3s ease;
+      }
+      .card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 40px rgba(26, 58, 42, 0.15);
+      }
+
+      /* ── FOOD IMAGE ── */
+      .card-image {
+        width: 100%;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        position: relative;
+      }
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+        display: block;
+      }
+      .card:hover .card-image img {
+        transform: scale(1.07);
+      }
+      .card-image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 50%,
+          rgba(0, 0, 0, 0.25) 100%
+        );
+      }
+
+      .card-header {
+        padding: 1.2rem 1.5rem 0.8rem;
+        position: relative;
+      }
+      .card-header.green-header {
+        background: linear-gradient(
+          135deg,
+          var(--green-dark),
+          var(--green-mid)
+        );
+      }
+      .card-header.juice-header {
+        background: linear-gradient(135deg, #7b2d2d, #c25454);
+      }
+      .card-header.kids-header {
+        background: linear-gradient(135deg, #2d5a6e, #4a8fab);
+      }
+      .card-header.starter-header {
+        background: linear-gradient(135deg, #5a4a2d, #9c7c4a);
+      }
+
+      .card-tag {
+        display: inline-block;
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+      }
+      .card-name {
+        font-family: "Syne", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .card-price-badge {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        background: var(--gold);
+        color: var(--green-dark);
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        font-family: "Syne", sans-serif;
+      }
+
+      .card-body {
+        padding: 1.25rem 1.5rem;
+        flex: 1;
+      }
+      .ingredients {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1.2rem;
+      }
+      .ingredient-pill {
+        background: rgba(74, 140, 92, 0.1);
+        color: var(--text-mid);
+        border: 1px solid rgba(74, 140, 92, 0.2);
+        border-radius: 999px;
+        padding: 0.25rem 0.7rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .subscription-wrap {
+        background: var(--cream);
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        margin-bottom: 1.2rem;
+      }
+      .subscription-wrap h4 {
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--green-accent);
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+      .sub-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85rem;
+      }
+      .sub-row + .sub-row {
+        margin-top: 0.35rem;
+      }
+      .sub-label {
+        color: var(--text-mid);
+        font-weight: 400;
+      }
+      .sub-price {
+        font-weight: 700;
+        color: var(--green-dark);
+        font-family: "Syne", sans-serif;
+      }
+
+      .order-btn {
+        width: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--green-dark),
+          var(--green-mid)
+        );
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 0.85rem 1rem;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: all 0.25s ease;
+        text-decoration: none;
+        letter-spacing: 0.03em;
+      }
+      .order-btn:hover {
+        background: linear-gradient(
+          135deg,
+          var(--green-mid),
+          var(--green-accent)
+        );
+        transform: scale(1.01);
+        box-shadow: 0 6px 20px rgba(26, 58, 42, 0.25);
+      }
+
+      /* ── MAP SECTION ── */
+      .map-section {
+        background: var(--warm-white);
+        padding: 0 1rem 5rem;
+      }
+      .map-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(26, 58, 42, 0.12);
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        min-height: 380px;
+      }
+      .map-info {
+        background: var(--green-dark);
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      .map-info h3 {
+        font-family: "Syne", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: #fff;
+        line-height: 1.1;
+      }
+      .map-info h3 span {
+        color: var(--gold-light);
+      }
+      .map-detail {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .map-detail svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: var(--gold-light);
+      }
+      .map-directions-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--gold);
+        color: var(--green-dark);
+        padding: 0.8rem 1.6rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.25s;
+        width: fit-content;
+        margin-top: 0.5rem;
+      }
+      .map-directions-btn:hover {
+        background: var(--gold-light);
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
+      }
+      .map-embed {
+        position: relative;
+        width: 100%;
+        min-height: 380px;
+      }
+      .map-embed iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+
+      /* ── CTA BANNER ── */
+      .cta-banner {
+        background: linear-gradient(
+          135deg,
+          var(--green-dark),
+          var(--green-mid)
+        );
+        padding: 3rem 1.5rem;
+        text-align: center;
+      }
+      .cta-banner h3 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+      .cta-banner p {
+        color: var(--green-light);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+      .cta-call {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--gold);
+        color: var(--green-dark);
+        padding: 0.9rem 2rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.25s;
+      }
+      .cta-call:hover {
+        background: var(--gold-light);
+        transform: scale(1.03);
+        box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+      }
+
+      footer {
+        background: #0e2118;
+        color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 0.8rem;
+      }
+      footer span {
+        color: var(--gold);
+      }
+
+      @media (max-width: 700px) {
+        .menu-grid {
+          grid-template-columns: 1fr;
+        }
+        .map-container {
+          grid-template-columns: 1fr;
+        }
+        .map-embed {
+          min-height: 280px;
+        }
+        .hero-contact {
+          gap: 1rem;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-leaf"></div>
+      <div class="hero-leaf"></div>
+      <div class="hero-leaf"></div>
+      <div class="logo-wrap">
+        <h1><span>Good</span> Bite</h1>
+        <p class="hero-tagline">Health for Wealth · Palakkad</p>
+        <div class="hero-contact">
+          <a href="tel:9446986503">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.18 2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.08a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            9446986503
+          </a>
+          <a href="https://instagram.com/good.bite4u" target="_blank">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+            @good.bite4u
+          </a>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span>Menu</span>
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section">
+      <div class="section-title">
+        <p>Fresh · Healthy · Delivered</p>
+        <h2>Our Menu</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- STARTER -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="assets/starters.png"
+              alt="Starter - Fresh Fruits and Vegetables"
+              loading="lazy"
+            />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-header starter-header">
+            <div class="card-tag">Light &amp; Fresh</div>
+            <div class="card-name">Starter</div>
+            <div class="card-price-badge">₹75</div>
+          </div>
+          <div class="card-body">
+            <div class="ingredients">
+              <span class="ingredient-pill">🍎 Fruits</span>
+              <span class="ingredient-pill">🥕 Vegetables</span>
+              <span class="ingredient-pill">🫐 Dryfruits</span>
+              <span class="ingredient-pill">🌱 Seeds</span>
+            </div>
+            <div class="subscription-wrap">
+              <h4>Subscription Plans</h4>
+              <div class="sub-row">
+                <span class="sub-label">Weekly</span
+                ><span class="sub-price">₹366</span>
+              </div>
+              <div class="sub-row">
+                <span class="sub-label">Monthly</span
+                ><span class="sub-price">₹1,609</span>
+              </div>
+            </div>
+            <a
+              class="order-btn"
+              href="https://wa.me/919446986503?text=Hi!%20I%20want%20to%20order%20the%20Starter%20pack%20-%20%E2%82%B975%20from%20Good%20Bite%2C%20Palakkad."
+              target="_blank"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L.057 23.492a.5.5 0 0 0 .613.601l5.796-1.525A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 0 1-5.012-1.375l-.36-.214-3.718.978.993-3.628-.234-.373A9.818 9.818 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"
+                />
+              </svg>
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- KIDS PLATE -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="assets/kidsplate.png"
+              alt="Kids Plate - Healthy colorful fruits and sprouted grains"
+              loading="lazy"
+            />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-header kids-header">
+            <div class="card-tag">For Little Ones</div>
+            <div class="card-name">Kids Plate</div>
+            <div class="card-price-badge">₹95</div>
+          </div>
+          <div class="card-body">
+            <div class="ingredients">
+              <span class="ingredient-pill">🌱 Sprouted Grains</span>
+              <span class="ingredient-pill">🍓 Fruits</span>
+              <span class="ingredient-pill">🥦 Vegetables</span>
+              <span class="ingredient-pill">🫐 Dryfruits</span>
+            </div>
+            <div class="subscription-wrap">
+              <h4>Subscription Plans</h4>
+              <div class="sub-row">
+                <span class="sub-label">Weekly</span
+                ><span class="sub-price">₹463</span>
+              </div>
+              <div class="sub-row">
+                <span class="sub-label">Monthly</span
+                ><span class="sub-price">₹2,038</span>
+              </div>
+            </div>
+            <a
+              class="order-btn"
+              href="https://wa.me/919446986503?text=Hi!%20I%20want%20to%20order%20the%20Kids%20Plate%20-%20%E2%82%B995%20from%20Good%20Bite%2C%20Palakkad."
+              target="_blank"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L.057 23.492a.5.5 0 0 0 .613.601l5.796-1.525A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 0 1-5.012-1.375l-.36-.214-3.718.978.993-3.628-.234-.373A9.818 9.818 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"
+                />
+              </svg>
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- ADULT PLATE -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="assets/adultplate.png"
+              alt="Adult Plate - Balanced nutrition bowl"
+              loading="lazy"
+            />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-header green-header">
+            <div class="card-tag">Balanced Nutrition</div>
+            <div class="card-name">Adult Plate</div>
+            <div class="card-price-badge">₹125</div>
+          </div>
+          <div class="card-body">
+            <div class="ingredients">
+              <span class="ingredient-pill">🌱 Sprouted Grains</span>
+              <span class="ingredient-pill">🥚 Boiled Egg</span>
+              <span class="ingredient-pill">🍓 Fruits</span>
+              <span class="ingredient-pill">🥦 Vegetables</span>
+              <span class="ingredient-pill">🫐 Dryfruits</span>
+              <span class="ingredient-pill">🌾 Seeds</span>
+            </div>
+            <div class="subscription-wrap">
+              <h4>Subscription Plans</h4>
+              <div class="sub-row">
+                <span class="sub-label">Weekly</span
+                ><span class="sub-price">₹609</span>
+              </div>
+              <div class="sub-row">
+                <span class="sub-label">Monthly</span
+                ><span class="sub-price">₹2,681</span>
+              </div>
+            </div>
+            <a
+              class="order-btn"
+              href="https://wa.me/919446986503?text=Hi!%20I%20want%20to%20order%20the%20Adult%20Plate%20-%20%E2%82%B9125%20from%20Good%20Bite%2C%20Palakkad."
+              target="_blank"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L.057 23.492a.5.5 0 0 0 .613.601l5.796-1.525A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 0 1-5.012-1.375l-.36-.214-3.718.978.993-3.628-.234-.373A9.818 9.818 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"
+                />
+              </svg>
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- ADULT PLUS PLATE -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="assets/adultplusplate.png"
+              alt="Adult Plus Plate - Premium wellness with chicken"
+              loading="lazy"
+            />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-header green-header">
+            <div class="card-tag">Premium Wellness</div>
+            <div class="card-name">Adult Plus Plate</div>
+            <div class="card-price-badge">₹169</div>
+          </div>
+          <div class="card-body">
+            <div class="ingredients">
+              <span class="ingredient-pill">🍗 Steamed Chicken</span>
+              <span class="ingredient-pill">🌱 Sprouted Grains</span>
+              <span class="ingredient-pill">🥚 Boiled Egg</span>
+              <span class="ingredient-pill">🍓 Fruits</span>
+              <span class="ingredient-pill">🥦 Vegetables</span>
+              <span class="ingredient-pill">🫐 Dryfruits</span>
+              <span class="ingredient-pill">🌾 Seeds</span>
+            </div>
+            <div class="subscription-wrap">
+              <h4>Subscription Plans</h4>
+              <div class="sub-row">
+                <span class="sub-label">Weekly</span
+                ><span class="sub-price">₹824</span>
+              </div>
+              <div class="sub-row">
+                <span class="sub-label">Monthly</span
+                ><span class="sub-price">₹3,625</span>
+              </div>
+            </div>
+            <a
+              class="order-btn"
+              href="https://wa.me/919446986503?text=Hi!%20I%20want%20to%20order%20the%20Adult%20Plus%20Plate%20-%20%E2%82%B9169%20from%20Good%20Bite%2C%20Palakkad."
+              target="_blank"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L.057 23.492a.5.5 0 0 0 .613.601l5.796-1.525A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 0 1-5.012-1.375l-.36-.214-3.718.978.993-3.628-.234-.373A9.818 9.818 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"
+                />
+              </svg>
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- GYM PACK -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="assets/gymplate.png"
+              alt="Gym Pack - High protein fitness meal"
+              loading="lazy"
+            />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-header green-header">
+            <div class="card-tag">💪 Fitness Special</div>
+            <div class="card-name">Gym Pack</div>
+            <div class="card-price-badge">₹195</div>
+          </div>
+          <div class="card-body">
+            <div class="ingredients">
+              <span class="ingredient-pill">🍗 Steamed Chicken</span>
+              <span class="ingredient-pill">🌱 Sprouted Grains</span>
+              <span class="ingredient-pill">🥚 Boiled Egg</span>
+              <span class="ingredient-pill">🍓 Fruits</span>
+              <span class="ingredient-pill">🥦 Vegetables</span>
+            </div>
+            <div class="subscription-wrap">
+              <h4>Subscription Plans</h4>
+              <div class="sub-row">
+                <span class="sub-label">Weekly</span
+                ><span class="sub-price">₹951</span>
+              </div>
+              <div class="sub-row">
+                <span class="sub-label">Monthly</span
+                ><span class="sub-price">₹4,183</span>
+              </div>
+            </div>
+            <a
+              class="order-btn"
+              href="https://wa.me/919446986503?text=Hi!%20I%20want%20to%20order%20the%20Gym%20Pack%20-%20%E2%82%B9195%20from%20Good%20Bite%2C%20Palakkad."
+              target="_blank"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L.057 23.492a.5.5 0 0 0 .613.601l5.796-1.525A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 0 1-5.012-1.375l-.36-.214-3.718.978.993-3.628-.234-.373A9.818 9.818 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"
+                />
+              </svg>
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- ABC JUICE -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              src="assets/abcjuice.png"
+              alt="ABC Juice - Apple Beetroot Carrot"
+              loading="lazy"
+            />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-header juice-header">
+            <div class="card-tag">🥤 Fresh Juice</div>
+            <div class="card-name">ABC Juice</div>
+            <div class="card-price-badge">₹50</div>
+          </div>
+          <div class="card-body">
+            <div class="ingredients">
+              <span class="ingredient-pill">🍎 Apple</span>
+              <span class="ingredient-pill">🫚 Beetroot</span>
+              <span class="ingredient-pill">🥕 Carrot</span>
+            </div>
+            <div class="subscription-wrap">
+              <h4>Subscription Plans</h4>
+              <div class="sub-row">
+                <span class="sub-label">Weekly</span
+                ><span class="sub-price">₹244</span>
+              </div>
+              <div class="sub-row">
+                <span class="sub-label">Monthly</span
+                ><span class="sub-price">₹1,073</span>
+              </div>
+            </div>
+            <a
+              class="order-btn"
+              href="https://wa.me/919446986503?text=Hi!%20I%20want%20to%20order%20the%20ABC%20Juice%20-%20%E2%82%B950%20from%20Good%20Bite%2C%20Palakkad."
+              target="_blank"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L.057 23.492a.5.5 0 0 0 .613.601l5.796-1.525A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 0 1-5.012-1.375l-.36-.214-3.718.978.993-3.628-.234-.373A9.818 9.818 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"
+                />
+              </svg>
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section">
+      <div class="section-title">
+        <p>Come Visit Us</p>
+        <h2>Find Us Here</h2>
+        <div class="title-line"></div>
+      </div>
+      <div class="map-container">
+        <div class="map-info">
+          <h3>Good <span>Bite</span><br />Palakkad</h3>
+          <div class="map-detail">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Palakkad Town, Kerala, India<br /></span>
+          </div>
+          <div class="map-detail">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.18 2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.08a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            <span>9446986503</span>
+          </div>
+          <div class="map-detail">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span>Mon – Sat: 7 AM – 9 PM<br />Sun: 8 AM – 2 PM</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem">
+            <a
+              class="map-directions-btn"
+              href="https://share.google/rRzvtfeUWw7naYcSY"
+              target="_blank"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polygon points="3 11 22 2 13 21 11 13 3 11" />
+              </svg>
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+        <div class="map-embed">
+          <!-- OpenStreetMap embed — no API key needed, always works -->
+          <iframe
+            title="Good Bite Location - Palakkad"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=76.6448%2C10.7767%2C76.6648%2C10.7967&layer=mapnik&marker=10.7867%2C76.6548"
+            style="width: 100%; height: 100%; min-height: 380px; border: none"
+            loading="lazy"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <h3>Ready to Eat Healthy?</h3>
+      <p>Subscribe to a plan and get fresh meals delivered daily in Palakkad</p>
+      <a class="cta-call" href="tel:9446986503">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.18 2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.08a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+        Call Now: 9446986503
+      </a>
+    </section>
+
+    <footer>
+      <p>
+        © 2026 <span>Good Bite</span> · Palakkad, Kerala · Health For Wealth
+      </p>
+      <p style="margin-top: 0.6rem; font-size: 0.75rem">
+        Made with <span style="color: #e07070">♥</span> by
+        <a
+          href="https://wa.me/919188070526"
+          target="_blank"
+          style="color: var(--gold); text-decoration: none; font-weight: 600"
+          onmouseover="this.style.opacity = '.7'"
+          onmouseout="this.style.opacity = '1'"
+          >Vichu</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add("visible"), i * 80);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".card")
+        .forEach((card) => observer.observe(card));
+    </script>
+  </body>
+</html>
