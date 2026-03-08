@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Good Bite – Health For Wealth.</title>
-    <link rel="icon" type="image/svg+xml" href="assets/logo.jpg" />
+    <title>Good Bite – Health For Wealth</title>
+    <link rel="icon" href="assets/logo.png" type="image/jpeg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -111,54 +111,34 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
         animation: fadeUp 0.9s ease both;
       }
+
+      /* ── LOGO IMAGE ── */
       .logo-badge {
-        width: 90px;
-        height: 90px;
-        background: linear-gradient(135deg, var(--gold), var(--gold-light));
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Syne", sans-serif;
-        font-size: 1.1rem;
-        font-weight: 900;
-        color: var(--green-dark);
-        line-height: 1.1;
-        text-align: center;
-        box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4);
-        letter-spacing: -0.5px;
+        animation: fadeUp 0.9s ease both;
       }
-      .hero h1 {
-        font-family: "Syne", sans-serif;
-        font-size: clamp(2.8rem, 9vw, 5.5rem);
-        font-weight: 900;
-        color: #fff;
-        letter-spacing: -1px;
-        line-height: 1;
-        text-align: center;
-        animation: fadeUp 0.9s 0.15s ease both;
+      .logo-badge img {
+        width: 220px;
+        height: auto;
+        display: block;
       }
-      .hero h1 span {
-        color: var(--gold-light);
-      }
+
       .hero-tagline {
         font-size: clamp(0.8rem, 2.5vw, 1rem);
         letter-spacing: 0.35em;
         text-transform: uppercase;
         color: var(--green-light);
-        margin-top: 0.5rem;
-        animation: fadeUp 0.9s 0.3s ease both;
+        animation: fadeUp 0.9s 0.2s ease both;
       }
       .hero-contact {
-        margin-top: 2rem;
+        margin-top: 0.5rem;
         display: flex;
         gap: 1.5rem;
         flex-wrap: wrap;
         justify-content: center;
-        animation: fadeUp 0.9s 0.45s ease both;
+        animation: fadeUp 0.9s 0.35s ease both;
       }
       .hero-contact a {
         color: rgba(255, 255, 255, 0.75);
@@ -172,6 +152,7 @@
       .hero-contact a:hover {
         color: var(--gold-light);
       }
+
       .scroll-hint {
         position: absolute;
         bottom: 2rem;
@@ -185,7 +166,7 @@
         font-size: 0.7rem;
         letter-spacing: 0.2em;
         text-transform: uppercase;
-        animation: fadeUp 0.9s 0.7s ease both;
+        animation: fadeUp 0.9s 0.6s ease both;
       }
       .scroll-dot {
         width: 6px;
@@ -280,7 +261,6 @@
         box-shadow: 0 12px 40px rgba(26, 58, 42, 0.15);
       }
 
-      /* ── FOOD IMAGE ── */
       .card-image {
         width: 100%;
         aspect-ratio: 1/1;
@@ -587,6 +567,9 @@
           flex-direction: column;
           align-items: center;
         }
+        .logo-badge img {
+          width: 160px;
+        }
       }
     </style>
   </head>
@@ -597,7 +580,9 @@
       <div class="hero-leaf"></div>
       <div class="hero-leaf"></div>
       <div class="logo-wrap">
-        <h1><span>Good</span> Bite</h1>
+        <div class="logo-badge">
+          <img src="assets/logo.png" alt="Good Bite Logo" />
+        </div>
         <p class="hero-tagline">Health for Wealth · Palakkad</p>
         <div class="hero-contact">
           <a href="tel:9446986503">
@@ -628,7 +613,7 @@
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
-            good.bite4u
+            @good.bite4u
           </a>
         </div>
       </div>
@@ -1129,7 +1114,7 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <span>Palakkad Town, Kerala, India<br /></span>
+            <span>Palakkad Town, Kerala, India</span>
           </div>
           <div class="map-detail">
             <svg
@@ -1181,7 +1166,6 @@
           </div>
         </div>
         <div class="map-embed">
-          <!-- OpenStreetMap embed — no API key needed, always works -->
           <iframe
             title="Good Bite Location - Palakkad"
             src="https://www.openstreetmap.org/export/embed.html?bbox=76.6448%2C10.7767%2C76.6648%2C10.7967&layer=mapnik&marker=10.7867%2C76.6548"
@@ -1250,5 +1234,3 @@
     </script>
   </body>
 </html>
-
-
